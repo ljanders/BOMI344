@@ -1,0 +1,87 @@
+- Class: meta
+  Course: BOMI344Swirl
+  Lesson: Writing Code Lesson
+  Author: Laurie Anderson
+  Type: Standard
+  Organization: Ohio Wesleyan University
+  Version: 2.4.3
+
+- Class: text
+  Output: Welcome to this demonstration of R using ecological field data!
+
+- Class: text
+  Output: R is a powerful and free statistical program that is widely used in the biological sciences.
+
+- Class: text
+  Output: We will use R to explore and analyze field data we collected earlier this semester.
+
+- Class: text
+  Output: First, let's make sure you understand how and why particular tests apply to our field data.
+
+- Class: mult_question
+  Output: We collected soil temperature measurements in three locations at Cantwell Cliffs, on a west-facing slope, a north-facing slope, and in the ravine. Which of the following represents the appropriate null hypothesis for this dataset?
+  AnswerChoices: There is no difference in soil temperature among the sites.;Soil temperature will be coolest in the ravine.;Soil temperature will be coolest on the north-facing slope.
+  CorrectAnswer: There is no difference in soil temperature among the sites.
+  AnswerTests: omnitest(correctVal='There is no difference in soil temperature among the sites.')
+  Hint: Type a hint.
+
+- Class: mult_question
+  Output: What is the appropriate statistical test to use to test this null hypothesis?
+  AnswerChoices: ANOVA;T-test;correlation;regression
+  CorrectAnswer: ANOVA
+  AnswerTests: omnitest(correctVal='ANOVA')
+  Hint: Type a hint.
+
+- Class: mult_question
+  Output: Suppose we had just two groups to compare. What test would you use then?
+  AnswerChoices: T-test;ANOVA;correlation;regression
+  CorrectAnswer: T-test
+  AnswerTests: omnitest(correctVal='T-test')
+  Hint: Type a hint.
+
+- Class: mult_question
+  Output: Regarding an alternative hypothesis, what would you predict, based on your knowledge of Cantwell Cliffs?
+  AnswerChoices: West-facing sites will be warmest.;North-facing sites will be warmest.;The ravine will be warmest.
+  CorrectAnswer: West-facing sites will be warmest.
+  AnswerTests: omnitest(correctVal='West-facing sites will be warmest.')
+  Hint: Type a hint.
+
+- Class: text
+  Output: Now that we have decided we need to do an ANOVA, let's figure out how to make R do this.
+
+- Class: text
+  Output: Learning R code is like learning any new language. You need to know what the different parts mean and then you can change and 
+   rearrange them as you wish.
+
+- Class: text
+  Output: The structure of many lines of R code is based on this structure
+    Command to R(Dependent variable~Independent variable, data = file with the data)
+
+- Class: text
+  Output: For example, the code to calculate our favorite descriptive statistics for soil pH data from Cantwell Cliffs might look like this
+    favstats(SoilpH~Location, data = SoilpHCantwell)
+
+- Class: text_question
+  Output: Based on this, how might you change this command to calculate your favorite statistics comparing soil pH among locations for a dataset called SoilsData? That is, which part of the original command would you change? Type in that portion.
+  CorrectAnswer: 'SoilpHCantwell'
+  AnswerTests: omnitest(correctVal='SoilpHCantwell')
+  Hint: The last part of the code is the file name.
+
+- Class: text_question
+  Output: In the example, the variable name Location refers to the different places where soil was collected. Suppose you wanted to compare soil pH at different depths instead and had a column called Depth where you had recorded the depth of your soil pH sample. 
+    How would you change the command to look at favorite statistics comparing different depths? What part of the command would you replace? Type it in below.
+  CorrectAnswer: 'Location'
+  AnswerTests: omnitest(correctVal='Location')
+  Hint: Depth should be in the position of the independent variable within the command.
+
+- Class: text_question
+  Output: Suppose that you wanted to compare the mean pH at two different depths with a t-test.
+    The command for a t test is t.test.
+    How would you write the code to R to ask for a t-test comparing pH at two soil depths from the SoilsData datafile? What part of the command would you replace?
+  CorrectAnswer: 'favstats'
+  AnswerTests: omnitest(correctVal='favstats')
+  Hint: Command to R(Dependent variable~Independent variable, data = file with the data)
+
+- Class: text
+  Output: Now you are ready to try some R code on your own with a data set. Good luck!
+ 
